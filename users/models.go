@@ -2,8 +2,8 @@ package users
 
 import (
 	"errors"
-	"github.com/jinzhu/gorm"
 	"github.com/gothinkster/golang-gin-realworld-example-app/common"
+	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -89,9 +89,9 @@ func SaveOne(data interface{}) error {
 
 // You could update properties of an UserModel to database returning with error info.
 //  err := db.Model(userModel).Update(UserModel{Username: "wangzitian0"}).Error
-func (model *UserModel) Update(data interface{}) error {
+func (u *UserModel) Update(data interface{}) error {
 	db := common.GetDB()
-	err := db.Model(model).Update(data).Error
+	err := db.Model(u).Update(data).Error
 	return err
 }
 
